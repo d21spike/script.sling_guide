@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <coordinates>
+        <system>1</system>
+        <posx>0</posx>
+        <posy>0</posy>
+    </coordinates>
+    <controls>
+        <control type="image" id="5000">
+            <description>Guide window background</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1280</width>
+            <height>720</height>
+            <texture>background-main.png</texture>
+            <fadetime>500</fadetime>
+        </control>
+        <control type="image" id="5001">
+            <description>Guide window overlay</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1280</width>
+            <height>720</height>
+            <texture>overlay2.png</texture>
+            <fadetime>500</fadetime>
+        </control>
+        <control type="image" id="5002">
+            <description>Guide window logo</description>
+            <posx>20</posx>
+            <posy>30</posy>
+            <width>120</width>
+            <height>120</height>
+            <texture>logo.png</texture>
+            <fadetime>500</fadetime>
+        </control>
+        <control type="label" id="5003">
+            <description>Timestamp</description>
+            <posx>1000</posx>
+            <posy>68</posy>
+            <width>200</width>
+            <height>35</height>
+            <textcolor>FFFFFFFF</textcolor>
+            <font>font45</font>
+            <align>center</align>
+            <aligny>center</aligny>
+        </control>
+        <control type="image" id="5004">
+            <description>Horizontal Line 1</description>
+            <posx>154</posx>
+            <posy>206</posy>
+            <width>1112</width>
+            <height>4</height>
+            <texture>hor_line.png</texture>
+            <fadetime>500</fadetime>
+        </control>
+        <control type="image" id="5005">
+            <description>Horizontal Line 2</description>
+            <posx>154</posx>
+            <posy>256</posy>
+            <width>1112</width>
+            <height>4</height>
+            <texture>hor_line.png</texture>
+            <fadetime>500</fadetime>
+        </control>
+        <control type="image" id="5006">
+            <description>Horizontal Line 3</description>
+            <posx>154</posx>
+            <posy>306</posy>
+            <width>1112</width>
+            <height>4</height>
+            <texture>hor_line.png</texture>
+            <fadetime>500</fadetime>
+        </control>
+        <control type="image" id="5007">
+            <description>Horizontal Line 4</description>
+            <posx>154</posx>
+            <posy>356</posy>
+            <width>1112</width>
+            <height>4</height>
+            <texture>hor_line.png</texture>
+            <fadetime>500</fadetime>
+        </control>
+        <control type="image" id="5008">
+            <description>Horizontal Line 5</description>
+            <posx>154</posx>
+            <posy>406</posy>
+            <width>1112</width>
+            <height>4</height>
+            <texture>hor_line.png</texture>
+            <fadetime>500</fadetime>
+        </control>
+        <control type="image" id="5009">
+            <description>Horizontal Line 6</description>
+            <posx>154</posx>
+            <posy>456</posy>
+            <width>1112</width>
+            <height>4</height>
+            <texture>hor_line.png</texture>
+            <fadetime>500</fadetime>
+        </control>
+        <control type="image" id="5010">
+            <description>Horizontal Line 7</description>
+            <posx>154</posx>
+            <posy>506</posy>
+            <width>1112</width>
+            <height>4</height>
+            <texture>hor_line.png</texture>
+            <fadetime>500</fadetime>
+        </control>
+        <control type="image" id="5011">
+            <description>Horizontal Line 8</description>
+            <posx>154</posx>
+            <posy>556</posy>
+            <width>1112</width>
+            <height>4</height>
+            <texture>hor_line.png</texture>
+            <fadetime>500</fadetime>
+        </control>
+        <control type="image" id="5012">
+            <description>Horizontal Line 9</description>
+            <posx>154</posx>
+            <posy>606</posy>
+            <width>1112</width>
+            <height>4</height>
+            <texture>hor_line.png</texture>
+            <fadetime>500</fadetime>
+        </control>
+        <control type="image" id="5013">
+            <description>Horizontal Line 10</description>
+            <posx>154</posx>
+            <posy>656</posy>
+            <width>1112</width>
+            <height>4</height>
+            <texture>hor_line.png</texture>
+            <fadetime>500</fadetime>
+        </control>
+        <control type="image" id="5014">
+            <description>Vertical Line 1</description>
+            <posx>154</posx>
+            <posy>168</posy>
+            <width>4</width>
+            <height>40</height>
+            <texture>ver_line.png</texture>
+            <fadetime>500</fadetime>
+        </control>
+        <control type="image" id="5015">
+            <description>Vertical Line 2</description>
+            <posx>431</posx>
+            <posy>168</posy>
+            <width>4</width>
+            <height>40</height>
+            <texture>ver_line.png</texture>
+            <fadetime>500</fadetime>
+        </control>
+        <control type="image" id="5016">
+            <description>Vertical Line 3</description>
+            <posx>708</posx>
+            <posy>168</posy>
+            <width>4</width>
+            <height>40</height>
+            <texture>ver_line.png</texture>
+            <fadetime>500</fadetime>
+        </control>
+        <control type="image" id="5017">
+            <description>Vertical Line 4</description>
+            <posx>985</posx>
+            <posy>168</posy>
+            <width>4</width>
+            <height>40</height>
+            <texture>ver_line.png</texture>
+            <fadetime>500</fadetime>
+        </control>
+        <control type="label" id="5018">
+            <description>Timeslot 1</description>
+            <posx>160</posx>
+            <posy>165</posy>
+            <width>270</width>
+            <height>40</height>
+            <textcolor>FFFFFFFF</textcolor>
+            <font>font20</font>
+            <align>left</align>
+            <aligny>center</aligny>
+        </control>
+        <control type="label" id="5019">
+            <description>Timeslot 2</description>
+            <posx>437</posx>
+            <posy>165</posy>
+            <width>270</width>
+            <height>40</height>
+            <textcolor>FFFFFFFF</textcolor>
+            <font>font20</font>
+            <align>left</align>
+            <aligny>center</aligny>
+        </control>
+        <control type="label" id="5020">
+            <description>Timeslot 3</description>
+            <posx>714</posx>
+            <posy>165</posy>
+            <width>270</width>
+            <height>40</height>
+            <textcolor>FFFFFFFF</textcolor>
+            <font>font20</font>
+            <align>left</align>
+            <aligny>center</aligny>
+        </control>
+        <control type="label" id="5021">
+            <description>Timeslot 4</description>
+            <posx>991</posx>
+            <posy>165</posy>
+            <width>270</width>
+            <height>40</height>
+            <textcolor>FFFFFFFF</textcolor>
+            <font>font20</font>
+            <align>left</align>
+            <aligny>center</aligny>
+        </control>
+        <control type="image" id="5022">
+            <description>Position Line</description>
+            <posx>154</posx>
+            <posy>168</posy>
+            <width>4</width>
+            <height>540</height>
+            <texture>pos_line.png</texture>
+            <fadetime>500</fadetime>
+        </control>
+        <control type="image" id="5023">
+            <description>Slot Thumbnail</description>
+            <posx>200</posx>
+            <posy>20</posy>
+            <width>120</width>
+            <height>140</height>
+            <aspectRatio>2</aspectRatio>
+            <texture>no_thumb.png</texture>
+            <fadetime>500</fadetime>
+        </control>
+        <control type="label" id="5024">
+            <description>Slot Title</description>
+            <posx>350</posx>
+            <posy>20</posy>
+            <width>400</width>
+            <height>30</height>
+            <textcolor>FFFFFFFF</textcolor>
+            <font>font20</font>
+            <align>left</align>
+            <aligny>center</aligny>
+        </control>
+        <control type="label" id="5025">
+            <description>Slot Description</description>
+            <posx>350</posx>
+            <posy>50</posy>
+            <width>600</width>
+            <height>50</height>
+            <textcolor>FFFFFFFF</textcolor>
+            <font>font20</font>
+            <align>left</align>
+            <aligny>top</aligny>
+            <wrapmultiline>true</wrapmultiline>
+        </control>
+        <control type="label" id="5026">
+            <description>Slot Time</description>
+            <posx>350</posx>
+            <posy>110</posy>
+            <width>600</width>
+            <height>20</height>
+            <textcolor>FFFFFFFF</textcolor>
+            <font>font20</font>
+            <align>left</align>
+            <aligny>top</aligny>
+            <wrapmultiline>true</wrapmultiline>
+        </control>
+        <control type="label" id="5027">
+            <description>Slot Rating</description>
+            <posx>350</posx>
+            <posy>130</posy>
+            <width>600</width>
+            <height>20</height>
+            <textcolor>FFFFFFFF</textcolor>
+            <font>font20</font>
+            <align>left</align>
+            <aligny>top</aligny>
+            <wrapmultiline>true</wrapmultiline>
+        </control>
+        <control type="image" id="11000">
+            <description>Channel 1 logo</description>
+            <posx>80</posx>
+            <posy>215</posy>
+            <width>40</width>
+            <height>40</height>
+            <texture>logo.png</texture>
+            <fadetime>500</fadetime>
+        </control>
+        <control type="label" id="11001">
+            <description>Channel 1 Text</description>
+            <label >Ch: 1</label>
+            <posx>20</posx>
+            <posy>215</posy>
+            <width>50</width>
+            <height>40</height>
+            <textcolor>FFFFFFFF</textcolor>
+            <font>font20</font>
+            <align>center</align>
+            <aligny>center</aligny>
+        </control>
+        <control type="image" id="12000">
+            <description>Channel 2 logo</description>
+            <posx>80</posx>
+            <posy>265</posy>
+            <width>40</width>
+            <height>40</height>
+            <texture>logo.png</texture>
+            <fadetime>500</fadetime>
+        </control>
+        <control type="label" id="12001">
+            <description>Channel 2 Text</description>
+            <label >Ch: 2</label>
+            <posx>20</posx>
+            <posy>265</posy>
+            <width>50</width>
+            <height>40</height>
+            <textcolor>FFFFFFFF</textcolor>
+            <font>font20</font>
+            <align>center</align>
+            <aligny>center</aligny>
+        </control>
+        <control type="image" id="13000">
+            <description>Channel 3 logo</description>
+            <posx>80</posx>
+            <posy>315</posy>
+            <width>40</width>
+            <height>40</height>
+            <texture>logo.png</texture>
+            <fadetime>500</fadetime>
+        </control>
+        <control type="label" id="13001">
+            <description>Channel 3 Text</description>
+            <label >Ch: 3</label>
+            <posx>20</posx>
+            <posy>315</posy>
+            <width>50</width>
+            <height>40</height>
+            <textcolor>FFFFFFFF</textcolor>
+            <font>font20</font>
+            <align>center</align>
+            <aligny>center</aligny>
+        </control>
+        <control type="image" id="14000">
+            <description>Channel 4 logo</description>
+            <posx>80</posx>
+            <posy>365</posy>
+            <width>40</width>
+            <height>40</height>
+            <texture>logo.png</texture>
+            <fadetime>500</fadetime>
+        </control>
+        <control type="label" id="14001">
+            <description>Channel 4 Text</description>
+            <label >Ch: 4</label>
+            <posx>20</posx>
+            <posy>365</posy>
+            <width>50</width>
+            <height>40</height>
+            <textcolor>FFFFFFFF</textcolor>
+            <font>font20</font>
+            <align>center</align>
+            <aligny>center</aligny>
+        </control>
+        <control type="image" id="15000">
+            <description>Channel 5 logo</description>
+            <posx>80</posx>
+            <posy>415</posy>
+            <width>40</width>
+            <height>40</height>
+            <texture>logo.png</texture>
+            <fadetime>500</fadetime>
+        </control>
+        <control type="label" id="15001">
+            <description>Channel 5 Text</description>
+            <label >Ch: 5</label>
+            <posx>20</posx>
+            <posy>415</posy>
+            <width>50</width>
+            <height>40</height>
+            <textcolor>FFFFFFFF</textcolor>
+            <font>font20</font>
+            <align>center</align>
+            <aligny>center</aligny>
+        </control>
+        <control type="image" id="16000">
+            <description>Channel 6 logo</description>
+            <posx>80</posx>
+            <posy>465</posy>
+            <width>40</width>
+            <height>40</height>
+            <texture>logo.png</texture>
+            <fadetime>500</fadetime>
+        </control>
+        <control type="label" id="16001">
+            <description>Channel 6 Text</description>
+            <label >Ch: 6</label>
+            <posx>20</posx>
+            <posy>465</posy>
+            <width>50</width>
+            <height>40</height>
+            <textcolor>FFFFFFFF</textcolor>
+            <font>font20</font>
+            <align>center</align>
+            <aligny>center</aligny>
+        </control>
+        <control type="image" id="17000">
+            <description>Channel 7 logo</description>
+            <posx>80</posx>
+            <posy>515</posy>
+            <width>40</width>
+            <height>40</height>
+            <texture>logo.png</texture>
+            <fadetime>500</fadetime>
+        </control>
+        <control type="label" id="17001">
+            <description>Channel 7 Text</description>
+            <label >Ch: 7</label>
+            <posx>20</posx>
+            <posy>515</posy>
+            <width>50</width>
+            <height>40</height>
+            <textcolor>FFFFFFFF</textcolor>
+            <font>font20</font>
+            <align>center</align>
+            <aligny>center</aligny>
+        </control>
+        <control type="image" id="18000">
+            <description>Channel 8 logo</description>
+            <posx>80</posx>
+            <posy>565</posy>
+            <width>40</width>
+            <height>40</height>
+            <texture>logo.png</texture>
+            <fadetime>500</fadetime>
+        </control>
+        <control type="label" id="18001">
+            <description>Channel 8 Text</description>
+            <label >Ch: 8</label>
+            <posx>20</posx>
+            <posy>565</posy>
+            <width>50</width>
+            <height>40</height>
+            <textcolor>FFFFFFFF</textcolor>
+            <font>font20</font>
+            <align>center</align>
+            <aligny>center</aligny>
+        </control>
+        <control type="image" id="19000">
+            <description>Channel 9 logo</description>
+            <posx>80</posx>
+            <posy>615</posy>
+            <width>40</width>
+            <height>40</height>
+            <texture>logo.png</texture>
+            <fadetime>500</fadetime>
+        </control>
+        <control type="label" id="19001">
+            <description>Channel 9 Text</description>
+            <label >Ch: 9</label>
+            <posx>20</posx>
+            <posy>615</posy>
+            <width>50</width>
+            <height>40</height>
+            <textcolor>FFFFFFFF</textcolor>
+            <font>font20</font>
+            <align>center</align>
+            <aligny>center</aligny>
+        </control>
+        <control type="image" id="20000">
+            <description>Channel 10 logo</description>
+            <posx>80</posx>
+            <posy>665</posy>
+            <width>40</width>
+            <height>40</height>
+            <texture>logo.png</texture>
+            <fadetime>500</fadetime>
+        </control>
+        <control type="label" id="20001">
+            <description>Channel 10 Text</description>
+            <label >Ch: 10</label>
+            <posx>20</posx>
+            <posy>665</posy>
+            <width>50</width>
+            <height>40</height>
+            <textcolor>FFFFFFFF</textcolor>
+            <font>font20</font>
+            <align>center</align>
+            <aligny>center</aligny>
+        </control>
+    </controls>
+</window>

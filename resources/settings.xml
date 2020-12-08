@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings label="30009">
+    <setting id="Enable_Debugging" type="bool"   label="30000" default="false" />
+</settings>
