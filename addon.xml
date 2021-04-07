@@ -2,9 +2,10 @@
 <addon id="script.sling_guide" version="0.0.01" name="Sling Guide" provider-name="IOFault">
     <requires>
         <import addon="xbmc.python" version="2.26.0"/>
-        <import addon="script.module.requests" version="2.7.0"/>
-        <import addon="plugin.video.sling" version="0.0.95"/>
-        <import addon="script.module.xmltodict" version="0.9.0"/>
+        <import addon="script.module.requests"/>
+        <import addon="plugin.video.sling"/>
+        <import addon="script.module.xmltodict"/>
+        <import addon="script.module.kodi-six"/>
     </requires>
     <extension point="xbmc.python.script" library="default.py"/>
     <extension point="xbmc.addon.metadata">
