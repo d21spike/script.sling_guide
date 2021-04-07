@@ -251,16 +251,19 @@ class Guide(xbmcgui.WindowXML):
                     if (xCor + stopOffset) > 1263:
                         width = 1263 - xCor
                     label = slot["Name"]
-                    log('::drawGuide() Channel: %s Slot: %s Time: %i=>%i Duration: %i Position: (%d, %d) Width: %d' % (channel["Name"], slot["Name"], slot["Start"], slot["Stop"], duration, xCor, yCor, width))
-                    button = xbmcgui.ControlButton(x=int(xCor), y=int(yCor), width=int(width), height=height, alignment=6, noFocusTexture=noFocus, focusTexture=focus, label=label)
+                    if int(width) > 1:
+                        log('::drawGuide() Channel: %s Slot: %s Time: %i=>%i Duration: %i Position: (%d, %d) Width: %d' % (channel["Name"], slot["Name"], slot["Start"], slot["Stop"], duration, xCor, yCor, width))
+                        button = xbmcgui.ControlButton(x=int(xCor), y=int(yCor), width=int(width), height=height, alignment=6, noFocusTexture=noFocus, focusTexture=focus, label=label)
                     
-                    
-                    self.addControl(button)
-                    self.GuideSlots[channelIndex][slot["Start"]] = button.getId()
-                    if not selected:
-                        self.setFocus(button)
-                        selected = True
-                        self.showInfo(channelIndex, slot['Start'])
+                    try:
+                        self.addControl(button)
+                        self.GuideSlots[channelIndex][slot["Start"]] = button.getId()
+                        if not selected:
+                            self.setFocus(button)
+                            selected = True
+                            self.showInfo(channelIndex, slot['Start'])
+                    except:
+                        log('::drawGuide() Channel %s | Control %i: Control already used' % (channel["Name"], button.getId()))
             
             if noSlots:
                 log('::drawGuide() Channel: %s no slots' % channel["Name"])
@@ -575,11 +578,16 @@ class Guide(xbmcgui.WindowXML):
         log('::removeSlots() Channel: %i through %i' % (self.StartChannel, self.StopChannel + 1))
         controlList = []
         for channelIndex in range(self.StartChannel, self.StopChannel + 1):
-            slots = self.GuideSlots[channelIndex]
-            for slot in slots:
-                controlId = slots[slot]
-                control = self.getControls(controlId)
-                controlList.append(control)
+            try:
+                slots = self.GuideSlots[channelIndex]
+            except:
+                log('::removeSlots() Channel: %i failed to get slots' % channelIndex)
+                slots = None
+            if slots is not None:
+                for slot in slots:
+                    controlId = slots[slot]
+                    control = self.getControls(controlId)
+                    controlList.append(control)
             self.GuideSlots[channelIndex] = {}
         self.removeControls(controlList)
                         
@@ -623,6 +631,7 @@ class Guide(xbmcgui.WindowXML):
                     if slot["Start"] <= int(time.time()) < slot["Stop"]:
                         playURL = 'plugin://plugin.video.sling/?mode=play&url=%s&name=%s' % (channel["Playlist"], slot["Name"])
                         xbmc.executeJSONRPC('{"jsonrpc":"2.0","method":"Player.Open","params":{"item":{"file":"%s"}},"id":"1"}' % playURL)
+                        self.removeSlots()
             else:
                 log('::tryPlay() Unscheduled program cannot play.')
     
