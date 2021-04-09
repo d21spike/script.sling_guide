@@ -112,6 +112,10 @@ class Guide(xbmcgui.WindowXML):
         if action.getId() == ACTION_ENTER:
             log('::onAction() Enter Pressed')
             self.tryPlay()
+
+        if action.getId() == ACTION_RIGHT_CLICK or action.getId() == ACTION_MENU:
+            log('::onAction() Menu/Right Click pressed')
+            self.tryRecord()
     
     def getControls(self, controlId):
         log('::getControl()')
@@ -634,6 +638,40 @@ class Guide(xbmcgui.WindowXML):
                         self.removeSlots()
             else:
                 log('::tryPlay() Unscheduled program cannot play.')
+
+    def tryRecord(self):
+        log('::tryRecord()')
+
+        focusChannel, focusTimestamp = self.getFocusChannel()
+        if focusChannel != 0:
+            if focusTimestamp != 0:
+                log('::tryPlay() Examining Channel: %i | Timestamp: %i' %
+                    (focusChannel, focusTimestamp))
+
+                channel = self.Channels[focusChannel]
+                slot = channel["Guide"][focusTimestamp]
+                if slot is not None:
+                    if slot["Stop"] > int(time.time()):
+                        record = xbmcgui.Dialog().yesno("Set Record", "Would you like to record %s on %s @ %s?" % ( slot["Name"], channel["Name"], datetime.datetime.fromtimestamp(slot["Start"]).strftime('%I:%M %p')))
+                        log('::onAction() Dialog result %s' % record)
+
+                        if record:
+                            recURL = 'plugin://plugin.video.sling/?mode=tryRecord&channel=%s&start=%s' % (channel["ID"], slot["Start"])
+                            xbmc.executebuiltin('RunPlugin(%s)' % recURL)
+                    else:
+                        message = "Past program, cannot record."
+                        log("::tryRecord() %s" % message)
+                        try:
+                            xbmcgui.Dialog().notification(ADDON_NAME, message, ICON, 1000, False)
+                        except:
+                            xbmc.executebuiltin("Notification(%s, %s, %d, %s)" % (ADDON_NAME, message, 1000, ICON))
+            else:
+                message = "Unscheduled program cannot record."
+                log("::tryRecord() %s" % message)
+                try:
+                    xbmcgui.Dialog().notification(ADDON_NAME, message, ICON, 1000, False)
+                except:
+                    xbmc.executebuiltin("Notification(%s, %s, %d, %s)" % (ADDON_NAME, message, 1000, ICON))
     
     def showEPG(self):
         log('::showEPG()')
