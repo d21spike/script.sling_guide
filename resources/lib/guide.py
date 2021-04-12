@@ -89,11 +89,11 @@ class Guide(xbmcgui.WindowXML):
             log('::onAction() Right pressed')
             self.moveRight()
 
-        if action.getId() == ACTION_PGUP:
+        if action.getId() == ACTION_PGUP or action.getId() == ACTION_SWIPE_DOWN:
             log('::onAction() Page Up pressed')
             self.movePageUp()
         
-        if action.getId() == ACTION_PGDOWN:
+        if action.getId() == ACTION_PGDOWN or action.getId() == ACTION_SWIPE_UP:
             log('::onAction() Page Down pressed')
             self.movePageDown()
 
