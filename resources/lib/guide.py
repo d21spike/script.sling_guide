@@ -229,8 +229,8 @@ class Guide(xbmcgui.WindowXML):
             label.setLabel(str(channelIndex))
             self.GuideSlots[channelIndex] = {}
 
-            noFocus = xbmc.translatePath(os.path.join(IMAGE_PATH, 'button_no_focus.png'))
-            focus = xbmc.translatePath(os.path.join(IMAGE_PATH, 'button_focus.png'))
+            noFocus = xbmcvfs.translatePath(os.path.join(IMAGE_PATH, 'button_no_focus.png'))
+            focus = xbmcvfs.translatePath(os.path.join(IMAGE_PATH, 'button_focus.png'))
             noSlots = True
             for key in sorted(channel["Guide"]):
                 slot = channel["Guide"][key]
@@ -310,7 +310,7 @@ class Guide(xbmcgui.WindowXML):
                 break
         
         if updated == False:
-            noThumb = xbmc.translatePath(os.path.join(IMAGE_PATH, 'no_thumb.png'))
+            noThumb = xbmcvfs.translatePath(os.path.join(IMAGE_PATH, 'no_thumb.png'))
             slotThumb.setImage(noThumb)
             slotTitle.setLabel("")
             slotDescription.setLabel("")
