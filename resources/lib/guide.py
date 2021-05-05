@@ -88,7 +88,7 @@ class Guide(xbmcgui.WindowXML):
 
         if action.getId() == ACTION_SWIPE_LEFT:
             log('::onAction() Left swipe')
-            self.movePageLeft()
+            self.movePageRight()
 
         if action.getId() == ACTION_RIGHT:
             log('::onAction() Right pressed')
@@ -96,7 +96,7 @@ class Guide(xbmcgui.WindowXML):
 
         if action.getId() == ACTION_SWIPE_RIGHT:
             log('::onAction() Right swipe')
-            self.movePageRight()
+            self.movePageLeft()
 
         if action.getId() == ACTION_PGUP or action.getId() == ACTION_SWIPE_DOWN:
             log('::onAction() Page Up pressed')
