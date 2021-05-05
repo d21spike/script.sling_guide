@@ -8,7 +8,7 @@ SETTINGS = xbmcaddon.Addon(id=ADDON_ID)
 ADDON_URL = 'script://script.sling_guide/'
 ADDON_VERSION = SETTINGS.getAddonInfo('version')
 ADDON_PATH = SETTINGS.getAddonInfo('path')
-IMAGE_PATH = xbmc.translatePath(os.path.join(ADDON_PATH, 'resources', 'skins', 'default', 'media'))
+IMAGE_PATH = xbmcvfs.translatePath(os.path.join(ADDON_PATH, 'resources', 'skins', 'default', 'media'))
 HANDLE_ID = -1
 DEBUG = SETTINGS.getSetting('Enable_Debugging') == 'true'
 ICON = SETTINGS.getAddonInfo('icon')
@@ -19,7 +19,7 @@ PRINTABLE = set(string.printable)
 SLING = 'plugin://plugin.video.sling/?mode=play&url='
 SLING_SETTINGS = xbmcaddon.Addon(id=SLING_ADDON_ID)
 SLING_SETTINGS_LOC = SLING_SETTINGS.getAddonInfo('profile')
-DB_PATH = xbmc.translatePath(os.path.join(SLING_SETTINGS_LOC, 'sling.db'))
+DB_PATH = xbmcvfs.translatePath(os.path.join(SLING_SETTINGS_LOC, 'sling.db'))
 
 USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) ' \
              'Chrome/69.0.3497.100 Safari/537.36'
