@@ -15,6 +15,7 @@ class Guide(xbmcgui.WindowXML):
 
     Channels = {}
     GuideSlots = {}
+    ClickFocus = None
     CurrentFocus = None
     GuideStart = 0
     GuideStop = 0
@@ -85,9 +86,17 @@ class Guide(xbmcgui.WindowXML):
             log('::onAction() Left pressed')
             self.moveLeft()
 
+        if action.getId() == ACTION_SWIPE_LEFT:
+            log('::onAction() Left swipe')
+            self.movePageRight()
+
         if action.getId() == ACTION_RIGHT:
             log('::onAction() Right pressed')
             self.moveRight()
+            
+        if action.getId() == ACTION_SWIPE_RIGHT:
+            log('::onAction() Right swipe')
+            self.movePageLeft()
 
         if action.getId() == ACTION_PGUP or action.getId() == ACTION_SWIPE_DOWN:
             log('::onAction() Page Up pressed')
@@ -107,7 +116,7 @@ class Guide(xbmcgui.WindowXML):
 
         if action.getId() == ACTION_LEFTCLICK:
             log('::onAction() Left Click')
-            self.tryPlay()
+            self.setPlay()
 
         if action.getId() == ACTION_ENTER:
             log('::onAction() Enter Pressed')
@@ -620,6 +629,18 @@ class Guide(xbmcgui.WindowXML):
             posLine.setPosition(1262, posY)
         else:
             posLine.setPosition(154, posY)
+
+    def setPlay(self):
+        log('::setPlay()')
+
+        selectedFocus = self.getFocusId()
+        if selectedFocus != self.ClickFocus:
+            self.ClickFocus = selectedFocus
+
+            focusChannel, focusTimestamp = self.getFocusChannel()
+            self.showInfo(focusChannel, focusTimestamp)
+        else:
+            self.tryPlay()
 
     def tryPlay(self):
         log('::tryPlay()')
