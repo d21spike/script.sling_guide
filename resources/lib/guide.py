@@ -15,6 +15,7 @@ class Guide(xbmcgui.WindowXML):
 
     Channels = {}
     GuideSlots = {}
+    ClickFocus = None
     CurrentFocus = None
     GuideStart = 0
     GuideStop = 0
